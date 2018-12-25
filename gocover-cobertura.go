@@ -79,8 +79,11 @@ func (cov *Coverage) parseProfile(profile *Profile) error {
 	pkgPath, _ := filepath.Split(fileName)
 	pkgPath = strings.TrimRight(pkgPath, string(os.PathSeparator))
 
+	fmt.Println("pkgPath: " + pkgPath)
+
 	var pkg *Package
 	for _, p := range cov.Packages {
+		fmt.Println("p.Name: " + p.Name)
 		if p.Name == pkgPath {
 			pkg = p
 		}
